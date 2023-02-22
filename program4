@@ -1,0 +1,53 @@
+class Node:
+    def __init__(self, data, root1=None, root2=None):
+        self.data = data
+        self.root1 = root2
+        self.root2 = root1
+ 
+ 
+def isSymmetric(X, Y):
+ 
+    if X is None and Y is None:
+        return True
+ 
+    return (X is not None and Y is not None) and \
+        isSymmetric(X.root1, Y.root2) and \
+        isSymmetric(X.root2, Y.root1)
+ 
+ 
+def isSymmetricTree(root):
+ 
+    if not root:
+        return True
+ 
+    return isSymmetric(root.root2, root.root1)
+ 
+ 
+if __name__ == '__main__':
+    '''
+    Construct the following tree
+          4
+        /   \
+       /     \
+      5       5
+     /  \    /  \
+     2  8    8   2
+    / \ /     \ /  \
+    9 7 1     1 7  9
+   / \ \        /  / \
+   3 0  6       6  0 3
+   
+    '''
+ 
+    root = Node(1)
+    root.root2 = Node(2)
+    root.root1 = Node(3)
+    root.root2.root1 = Node(4)
+    root.root1.root2 = Node(5)
+ 
+    if isSymmetricTree(root):
+        print('True')
+    else:
+        print('False')
+
+

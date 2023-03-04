@@ -1,0 +1,120 @@
+1).Internship='Jumpwhere'
+   print(len(Internship))
+
+output:9
+
+2).String='google.com'
+   duplicate_dict={}
+   for i in String:
+       duplicate_dict[i]=String.count(i)
+   print(duplicate_dict)
+    
+output:{'g':2,'o':3,'l':1,'e':1,'.':1,'c':1,'m':1,}
+
+3).def string_both_ends(str):
+  	if len(str) < 2:
+    		return 'empty string'
+
+  	return str[0:2] + str[-2:]
+
+   print(string_both_ends('thisisniceone'))
+
+output:thne
+
+   print(string_both_ends('ab'))
+
+output:abab
+
+   print(string_both_ends('f'))
+
+output:Empty String
+
+4).s='restart'
+   x=5
+   r='$'
+   string=s[:x]+r+s[-1:]
+   print(string)
+
+output:resta$t
+    
+5).string1=input("enter the first string:")
+   string2=input("enter the second string:")
+   x=string1[0:2]
+   string1=string1.replace(string1[0:2],string2[0:2])
+   string2=string2.replace(string2[0:2],x)
+   print("first string after swapping:",string1)
+   print("second string after swapping:",string2)
+
+output: xyc abz
+
+6).
+def add_string(str1):
+  length = len(str1)
+
+  if length > 2:
+    if str1[-3:] == 'ing':
+      str1 += 'ly'
+    else:
+      str1 += 'ing'
+
+  return str1
+print(add_string('abc'))
+print(add_string('string'))
+
+7).
+def poor(str1):
+  Not=str1.find('not')
+  Poor=str1.find('poor')
+
+  if Poor>Not and Not>0 and Poor>0:
+    str1 =str1.replace(str1[Not:(Poor+4)],'good')
+    return str1
+  else:
+    return str1
+print(poor('lyrics is not that poor!'))
+print(poor('lyrics is poor!'))
+
+output:
+lyrics is good!
+lyrics is poor!
+
+8).
+def main():
+    text = input("Please input a list of words to evaluate: ")
+
+    longest = 0
+
+    for words in text.split():
+        if len(words) > longest:
+            longest = len(words)
+            longest_word = words
+
+    print("The longest word is", longest_word, "with length", len(longest_word))
+
+main() 
+
+output:
+longest word is royal with length 5
+
+9).
+str="jumpwhere"
+n=4
+remove_nthchar=''
+for char in range(0,len(str)):
+    if(char!=n):
+        remove_nthchar+=str[char]
+print("modified string after removing",n,"th character")
+print(remove_nthchar)
+
+output:
+jumphere
+
+10).
+strings=['red','white','black','red','green','black']
+uniques=[]
+for string in strings:
+    if string not in uniques:
+        uniques.append(string)
+print(str(uniques))
+
+

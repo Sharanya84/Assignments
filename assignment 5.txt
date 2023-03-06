@@ -1,0 +1,134 @@
+11).
+def reverse_string(str1):
+    if len(str1) % 4 == 0:
+       return ''.join(reversed(str1))
+    return str1
+
+print(reverse_string('abcd'))
+print(reverse_string('jumpwhere'))
+
+output:
+dcba
+jumpwhere
+
+12).
+def to_uppercase(str1):
+    num_upper = 0
+    for letter in str1[:4]: 
+        if letter.upper() == letter:
+            num_upper += 1
+    if num_upper >= 2:
+        return str1.upper()
+    return str1
+
+print(to_uppercase('PyThon'))
+
+output:
+PYTHON
+
+13).
+string = "jumpwhere.com"
+print(string.startswith("jump"))
+print(string.startswith("com"))
+
+output:
+True
+False
+
+14).
+x = 3.1415926
+print("\nOriginal Number: ", x)
+print("Formatted Number: "+"{:.2f}".format(x));
+
+output:
+3.14
+
+15).
+import collections
+str1 = 'thequickbrownfoxjumpsoverthelazydog'
+d = collections.defaultdict(int)
+for c in str1:
+    d[c] += 1
+
+for c in sorted(d, key=d.get, reverse=True):
+  if d[c] > 1:
+      print('%s %d' % (c, d[c]))
+
+output:
+o:4
+e:3
+t:2
+h:2
+u:2
+r:2
+
+16).
+text="hello world!"
+print(text.index('e'))
+
+output:
+1
+
+17).
+def Convert(string):
+    li = list(string.split(" "))
+    return li
+  
+str1 = "pack of breads"
+print(Convert(str1))
+
+output:
+['pack','of','breads']
+
+18).
+amount = "32.054,23"
+maketrans = amount.maketrans
+amount = amount.translate(maketrans(',.', '.,'))
+print(amount)
+
+output:
+32,054.23
+
+19).
+def smallest_largest_words(str1):
+    word = "";
+    all_words = [];
+    str1 = str1 + " ";
+    for i in range(0, len(str1)):
+        if(str1[i] != ' '):
+            word = word + str1[i];  
+        else:
+            all_words.append(word);  
+            word = "";  
+          
+    small = large = all_words[0];  
+   
+    for k in range(0, len(all_words)):
+        if(len(small) > len(all_words[k])):
+            small = all_words[k];
+        if(len(large) < len(all_words[k])):
+            large = all_words[k];
+    return small,large;
+
+str1 = "OOPs in Python";  
+print("Original Strings:\n",str1)
+small, large = smallest_largest_words(str1)  
+print("Smallest word: " + small);  
+print("Largest word: " + large); 
+
+output:
+smallest word :in
+largest word:Python
+
+20).
+string=['sher','ram','sheik','ram','sher']
+uniques=[]
+for strings in string:
+    if strings not in uniques:
+        uniques.append(strings)
+print(uniques)
+
+output:
+['sher','ram','sheik']
+
+

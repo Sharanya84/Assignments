@@ -115,6 +115,9 @@ uniques=[]
 for string in strings:
     if string not in uniques:
         uniques.append(string)
+        uniques.sort()
 print(str(uniques))
 
+output:
+['black','green','red','white']
 

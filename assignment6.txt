@@ -1,0 +1,267 @@
+1).
+num=[]
+for x in range(1500,2700):
+    if (x%7==0) and (x%5==0):
+        num.append(x)
+print(num)
+
+output:
+1505,1540,1575,1610,1645,1680,1715,1750,1785,1820,1855,1890,1925,1960,1995,2030,2065,2100,2135,2170,2205,2240,
+2275,2310,2345,2380,2415,2450,2485,2520,2555,2590,2625,2660,2695 
+
+2).
+for x in range(6):
+    if (x==3) or (x==6):
+        continue
+    print(x,end='')
+print("\n")
+
+output:
+01245
+
+3).
+for num in range(1,50):
+    if num%3==0:
+        print("fizz")
+    elif num%5==0:
+        print("buzz")
+    elif num%15==0:
+        print("fizzbuzz")
+    else: 
+        print(" ")
+
+
+4).
+def checktriangle(x,y,z):
+    if x==y==z:
+        print("equilateral triangle")
+    elif x==y or y==z or z==x:
+        print("isosceles triangle")
+    else:
+        print("scelene triangle")
+x=8 
+y=9
+z=9
+print(checktriangle(x,y,z))
+
+
+5).
+print("Input some integers to calculate their sum and average:")
+
+count = 0
+sum = 0.0
+number = 1
+
+while number != 0:
+	number = int(input(" "))
+	sum = sum + number
+	count += 1
+
+if count == 0:
+	print("Input some numbers")
+else:
+	print("Average and Sum of the above numbers are: ", sum / (count-1), sum)
+
+
+6).
+n = int(input("Enter number of rows: "))
+
+for i in range(1,n+1):
+    for j in range(1, i+1):
+        print(i, end="")
+    print()
+
+output:
+1
+22
+333
+4444
+55555
+666666
+7777777
+88888888
+
+7).
+list=[10,20,30,40,45,50,60,70]
+print("list is:" +str(count))
+def countgreater_30(list):
+    count=0
+    for i in list :
+        if i>30:
+            count+=1
+    return count
+print("number of elements greater than 30:", str(count))
+countgreater_30(list)
+
+8).
+def checkrectangle(w,x,y,z):
+    if w==x==y==z:
+        print("square")
+    else:
+        print("rectanle")
+w=9
+x=9 
+y=9
+z=9
+print(checkrectangle(w,x,y,z))
+
+output:
+square
+None
+
+9).
+print("Enter quantity")
+quantity = input()
+if int(quantity)*100 > 1000:
+  print("Cost is",((quantity*100)-(.1*quantity*100)))
+else:
+  print("Cost is",quantity*100)
+
+10).
+print("Enter salary:")
+salary = input()
+print("Enter year of service:")
+yos = input()
+if int(yos)>5:
+  print("Bonus is:",.05*float(salary))
+else:
+  print("No bonus")
+
+
+11).
+def checkgrade(x):
+    if x<25:
+        print("F")
+    if 25<=x<45:
+        print("E")
+    if 45<=x<50:
+        print("D")
+    if 50<=x<60:
+        print("C")
+    if 60<=x<80:
+        print("B")
+    if x>80:
+        print("A")
+x=98
+print(checkgrade(x))
+
+12).
+import math
+ 
+def minimumLecture(m, n):
+    ans = 0
+    if(n < math.ceil(0.75 * m)):
+        ans = math.ceil(((0.75 * m) - n) / 0.25)
+    else:
+        ans = 0
+    return ans
+M = 10
+N = 7
+ 
+print(minimumLecture(M, N))
+
+
+13).
+total_sum = 0
+
+for n in range (10):
+    num = float(input('Enter number: '))
+    total_sum += num
+avg = total_sum / 10
+
+print('Average of numbers = %0.2f' %avg)
+    
+
+14).
+i=1 
+num=24
+while i<=10:
+    print(num, "*", i ,"=",num*i)                                                                                                           
+    i+=1
+i=1 
+num=50
+while i<=10:
+    print(num, "*", i ,"=",num*i)
+    i+=1
+i=1 
+num=29
+while i<=10:
+    print(num, "*", i ,"=",num*i)
+    i+=1
+
+15).
+print("Start entering numbers")
+sum=0
+c=0
+while 1:
+    num=int(input())
+    c=c+1
+    sum=sum+num
+    print("Press q when you are done inputting the numbers or y to continue")
+    m=input()
+    if m=='q':
+        break
+    
+print("Average",sum/c)
+print("Sum",sum)
+
+16).
+num=[]
+list=[1,2,3,4,5,6,7]
+for i in list:
+    if i%3==0:
+        list.remove(i)
+print(list)
+        
+
+17).
+import sympy
+even=[]
+odd=[]
+prime=[]
+for i in range(1,101):
+    if i%2==0:
+        even.append(i)
+    if i%3==0:
+        odd.append(i)
+    #if i%2!=0 and i%3!=0 and i%5!=0:
+     #   prime.append(i)
+    print(sympy.isprime(i))
+    prime.append(i)
+print(even)
+print(odd)
+print(prime)
+
+18).
+even=[]
+odd=[]
+list=[4,6,8,10,3,5,7,9]
+for i in list:
+    if i%2==0:
+        even.append(i)
+    if i%2!=0:
+        odd.append(i)
+print(even)
+print(odd)
+
+19).
+A=[4,6.5,"hello",1,1.0,"bye",8]
+B=[]
+C=[]
+D=[]
+for i in A:
+    if type(i)==int:
+        B.append(i)
+    if type(i)==float:
+        C.append(i)
+    if type(i)==str:
+        D.append(i)
+print(B)
+print(C)
+print(D)
+
+20).
+list=[1,3,5,7,9,11]
+for i in range(len(list)):
+    list[i]=list[i]**2
+print(list)

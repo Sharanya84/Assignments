@@ -1,0 +1,6 @@
+1).
+my_dict=["2:ram","4:jam","3:sham","1:lime"]
+sortdict=sorted(my_dict)
+print(sortdict)
+
+2).

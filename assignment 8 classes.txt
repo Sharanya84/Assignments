@@ -1,0 +1,166 @@
+7).class py_solution:
+    def reverse_words(self, s):
+        return ' '.join(reversed(s.split()))
+
+print(py_solution().reverse_words('hello .py'))
+
+
+
+
+1).def printRoman(number):
+    num = [1, 4, 5, 9, 10, 40, 50, 90,
+        100, 400, 500, 900, 1000]
+    sym = ["I", "IV", "V", "IX", "X", "XL",
+        "L", "XC", "C", "CD", "D", "CM", "M"]
+    i = 12
+     
+    while number:
+        div = number // num[i]
+        number %= num[i]
+ 
+        while div:
+            print(sym[i], end = "")
+            div -= 1
+        i -= 1
+ 
+if __name__ == "__main__":
+    number = 3549
+    print("Roman value is:", end = " ")
+    printRoman(number)
+
+
+
+
+6).def power(x, n):
+ 
+    pow = 1
+    for i in range(n):
+        pow = pow * x
+ 
+    return pow
+ 
+if __name__ == '__main__':
+ 
+    x = 7
+    n = 2
+ 
+    print(power(x, n))
+
+
+
+
+10).class car:
+    def parts():
+        pass
+
+c = car()
+
+print(c.__class__)
+
+classes = c.__class__
+print(classes.__name__)
+
+
+
+9).from math import pi
+
+
+class circle:
+    def __init__(self):
+        self.radius = float(input("Enter Radius of Circle : "))
+
+    def compute_area(self):
+        print("Area of circle is : ", pi * self.radius * self.radius)
+
+    def compute_perimeter(self):
+        print("Perimeter of circle is : ", 2 * pi * self.radius)
+
+
+circle_object = circle()
+circle_object.compute_area()
+circle_object.compute_perimeter()
+
+
+8).
+def reverse(s):
+    str = ""
+    for i in s:
+        str = i + str
+    return str
+ 
+s = "jumpwhere"
+ 
+print("The original string is : ", end="")
+print(s)
+ 
+print("The reversed string(using loops) is : ", end="")
+print(reverse(s))
+
+
+
+5).class py_solution:
+ def threeSum(self, nums):
+        nums, result, i = sorted(nums), [], 0
+        while i < len(nums) - 2:
+            j, k = i + 1, len(nums) - 1
+            while j < k:
+                if nums[i] + nums[j] + nums[k] < 0:
+                    j += 1
+                elif nums[i] + nums[j] + nums[k] > 0:
+                    k -= 1
+                else:
+                    result.append([nums[i], nums[j], nums[k]])
+                    j, k = j + 1, k - 1
+                    while j < k and nums[j] == nums[j - 1]:
+                        j += 1
+                    while j < k and nums[k] == nums[k + 1]:
+                        k -= 1
+            i += 1
+            while i < len(nums) - 2 and nums[i] == nums[i - 1]:
+                i += 1
+        return result
+
+print(py_solution().threeSum([-25, -10, -7, -3, 2, 4, 8, 10]))
+
+
+
+4).class py_solution:
+  def twoSum(self, nums, target):
+       lookup = {}
+       i=1
+       for i,num in enumerate(nums):
+           if target - num in lookup:
+               return (lookup[target - num], i )
+           lookup[num] = i
+print("%d,%d" % py_solution().twoSum((90,20,10,40,50,60,70),50))
+
+
+3).class py_solution:
+    def sub_sets(self, sset):
+        return self.subsetsRecur([], sorted(sset))
+    
+    def subsetsRecur(self, current, sset):
+        if sset:
+            return self.subsetsRecur(current, sset[1:]) + self.subsetsRecur(current + [sset[0]], sset[1:])
+        return [current]
+
+print(py_solution().sub_sets([4,5,6]))
+
+
+2).
+class py_solution:
+   def is_valid_parenthese(self, str1):
+        stack, pchar = [], {"(": ")", "{": "}", "[": "]"}
+        for parenthese in str1:
+            if parenthese in pchar:
+                stack.append(parenthese)
+            elif len(stack) == 0 or pchar[stack.pop()] != parenthese:
+                return False
+        return len(stack) == 0
+
+print(py_solution().is_valid_parenthese("(){}[]"))
+print(py_solution().is_valid_parenthese("()[{)}"))
+print(py_solution().is_valid_parenthese("()"))
+
+
+

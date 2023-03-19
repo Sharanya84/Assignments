@@ -1,0 +1,90 @@
+1).import random
+
+print("Welcome to Cows and Bulls!")
+print("I will generate a 4 digit number, and you must guess what it is.")
+
+def getRandomNumber():
+    numberList = []
+    
+    theNumber = random.randint(1000, 9999)
+    theNumber = str(theNumber)
+    
+    for i in theNumber:
+        numberList.append(i)   
+    
+    return numberList
+
+def getUserGuess():
+    correctInput = False
+    guessList = []
+    
+    while correctInput == False:
+        userGuess = input("Enter your guess: ")  
+        
+        if userGuess.isnumeric() and len(userGuess) == 4:
+            correctInput = True
+        else:
+            print("You entered " + userGuess + ". Please enter a four digit number.")
+            
+    userGuess = str(userGuess)
+    for i in userGuess:
+        guessList.append(i)
+    
+    return guessList
+
+def displayOutcome(stateList): 
+    
+    if stateList.count("cow") >= 2 or stateList.count("cow") == 0:
+        multipleCows = True
+    else:
+        multipleCows = False
+    if stateList.count("bull") >= 2 or stateList.count("bull") == 0 :
+        multipleBulls = True
+    else:
+        multipleBulls = False
+        
+    if multipleCows:
+        cowResult = "{} cows".format(stateList.count("cow"))
+    else:
+        cowResult = "{} cow".format(stateList.count("cow"))
+    if multipleBulls:
+        bullResult = "{} bulls".format(stateList.count("bull"))
+    else:
+        bullResult = "{} bull".format(stateList.count("bull"))
+    
+    print("{}, {}".format(cowResult, bullResult))
+        
+def mainLoop(numberList):
+    correctGuess = False
+    tryCount = 0
+    
+    while correctGuess == False:        
+        
+        guessList = getUserGuess()  
+        tryCount += 1
+        
+        stateList = []             
+        for i in range(4):
+            stateList.append("null")
+    
+        for i in range(4):
+            if numberList[i] == guessList[i]:
+                stateList[i] = "cow"
+        
+        for i in range(4):
+            if numberList[i] != guessList[i] and (guessList[i] in numberList):
+                stateList[i] = "bull"
+        
+        if stateList.count("cow") == 4:
+            correctGuess = True
+            print("You got it right!")
+            print("Number of tries it took: {}".format(tryCount))
+            break
+        
+        displayOutcome(stateList)        
+
+def main():
+    numberList = getRandomNumber()    
+    mainLoop(numberList)
+
+main()

@@ -1,0 +1,84 @@
+1).
+X=lambda a:a+15
+Y=lambda x,y:x*y 
+print(X(10))
+print(Y(12,4))
+
+2).
+marks=[('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
+print(marks)
+marks.sort(key=lambda x:x[1])
+print(marks)
+
+3).
+list=[{'make': 'Nokia', 'model': 216, 'color': 'Black'},
+      {'make': 'Mi Max', 'model': 2, 'color': 'Gold'}, 
+      {'make': 'Samsung', 'model': 7, 'color': 'Blue'}] 
+print("list will be sorted based on value given to model:")
+print(sorted(list,key=lambda i:i['model'],reverse=True))
+
+4).
+starts_with=lambda x:True if x.startswith('J') else False
+print(starts_with('Jumpwhere'))
+starts_with=lambda x:True if x.startswith('J') else False
+print(starts_with('jumpwhere'))
+
+5).
+string = '123456'
+print(string.isnumeric())
+string = '123sha'
+print(string.isnumeric())
+
+6).
+num= [19, 65, 57, 39, 152, 639, 121, 44, 90, 190]
+print(num)
+result=list(filter(lambda x:(x%19==0 or x%13==0),num))
+print(result)
+
+7).
+def sort_matrix(M):
+    result=sorted(M,key=lambda matrix:sum(matrix))
+    return result
+    
+matrix1=[[1, 2, 3], [2, 4, 5], [1, 1, 1]] 
+matrix2=[[1, 2, 3], [-2, 4, -5], [1, -1, 1]] 
+
+print(sort_matrix(matrix1))
+print(sort_matrix(matrix2))
+
+8).
+def check_string(str1):
+    msg = [
+    lambda str1: any(x.isupper() for x in str1) or 'String must have 1 upper case character.',
+    lambda str1: any(x.islower() for x in str1) or 'String must have 1 lower case character.',
+    lambda str1: any(x.isdigit() for x in str1) or 'String must have 1 number.',
+    lambda str1: len(str1) >= 7                 or 'String length should be atleast 8.',]
+    result = [x for x in [i(str1) for i in msg] if x != True]
+    if not result:
+        result.append('Valid string.')
+    return result    
+s = input("Input the string: ")
+print(check_string(s))
+
+9).
+def find_substring(str1, sub_str):
+    result = list(filter(lambda x: sub_str in x, str1))
+    return result
+colors = ["red", "black", "white", "green", "orange"]
+print(colors)
+
+sub_str = "ack"
+print("ack Elements of the said list that contain specific substring")
+print(find_substring(colors, sub_str))
+sub_str = "abc"
+print("abc Elements of the said list that contain specific substring")
+print(find_substring(colors, sub_str))
+
+10).
+def sort_mixed_list(mixed_list):
+    mixed_list.sort(key=lambda e: (isinstance(e, str), e))
+    return mixed_list
+mixed_list = [19,'red',12,'green','blue', 10,'white','green',1]
+print(mixed_list)
+print("\nSort the said  mixed list of integers and strings:")
+print(sort_mixed_list(mixed_list))

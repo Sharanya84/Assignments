@@ -1,4 +1,0 @@
-X=lambda a:a+15
-Y=lambda x,y:x*y 
-print(X(10))
-print(Y(12,4))

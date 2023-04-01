@@ -1,0 +1,6 @@
+coordinates= [(1,-2), (-2, 4), (-1,-1),(-8, -3), (0, 4), (10,-3)]
+minx=min(point[0]for point in coordinates)
+res=[]
+for point in coordinates:
+    res.append((point[0]+abs(minx),point[1]+abs(minx)))
+print(res)
